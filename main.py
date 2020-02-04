@@ -47,11 +47,16 @@ def divide_set_and_transpose(matrices, percentage):
 def main():
     file_name = "Maple_Oak.txt"
     percentage = 20
-    number_of_characteristics = 2
+    number_of_characteristics = 3
+    selection = "SFS"  # SFS or F
     matrices = load_data(file_name)
     matrices_list = list(matrices.values())
     learning_set, training_set = divide_set_and_transpose(matrices_list, percentage)
-    print(fisher_algorithm(learning_set, number_of_characteristics))
+
+    if selection == "F":
+        print(fisher_algorithm(learning_set, number_of_characteristics))
+    elif selection == "SFS":
+        print(sfs_algorithm(learning_set, number_of_characteristics))
 
 
 if __name__ == "__main__":
