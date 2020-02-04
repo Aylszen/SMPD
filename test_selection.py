@@ -41,6 +41,30 @@ class TestSelection(unittest.TestCase):
         fisher_result = fisher_algorithm(matrices_list, number_of_characteristics)
         self.assertEqual(expected_result, fisher_result)
 
+    def test_sfs_algorithm_one_best_characteristic(self):
+        matrices_list = []
+        number_of_characteristics = 1
+        matrix_a = np.array([[1, 0, -1, 0], [0, 2, 2, 0], [7, 6, 7, 8], [3, 2, 4, 3]])
+        matrix_b = np.array([[7, 5, 3], [1, 2, 0], [3, 3, 3], [4, -1, 0]])
+        matrices_list.append(matrix_a)
+        matrices_list.append(matrix_b)
+        # Third characteristic (like in classes) = (2,)
+        expected_result = (2,)
+        sfs_result = sfs_algorithm(matrices_list, number_of_characteristics)
+        self.assertEqual(expected_result, sfs_result)
+
+    def test_sfs_algorithm_two_best_characteristics(self):
+        matrices_list = []
+        number_of_characteristics = 2
+        matrix_a = np.array([[1, 0, -1, 0], [0, 2, 2, 0], [7, 6, 7, 8], [3, 2, 4, 3]])
+        matrix_b = np.array([[7, 5, 3], [1, 2, 0], [3, 3, 3], [4, -1, 0]])
+        matrices_list.append(matrix_a)
+        matrices_list.append(matrix_b)
+        # First and third characteristic (like in classes) = (0, 2)
+        expected_result = (0, 2)
+        sfs_result = sfs_algorithm(matrices_list, number_of_characteristics)
+        self.assertEqual(expected_result, sfs_result)
+
 
 if __name__ == "__main__":
     unittest.main()
