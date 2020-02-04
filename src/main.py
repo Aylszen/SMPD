@@ -47,8 +47,8 @@ def divide_set_and_transpose(matrices, percentage):
 def main():
     path_to_file = "../Maple_Oak.txt"
     percentage = 20
-    number_of_characteristics = 3
-    selection = "SFS"  # SFS or F
+    number_of_characteristics = 2
+    selection = "F"  # SFS or F
     matrices = load_data(path_to_file)
     matrices_list = list(matrices.values())
     learning_set, training_set = divide_set_and_transpose(matrices_list, percentage)
