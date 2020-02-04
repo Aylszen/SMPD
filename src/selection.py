@@ -71,7 +71,7 @@ def sfs_algorithm(learning_set, number_of_characteristics):
         # get all possible combinations
         all_combinations = calculate_combinations(len(learning_set[0]), d)
         chosen_combinations = []
-        # print(all_combinations)
+        
         if the_best_coordinates:
             for coordinates_candidate in all_combinations:
                 flag = True
@@ -110,5 +110,4 @@ def sfs_algorithm(learning_set, number_of_characteristics):
                 the_best_diff = f_results[coordinates]
                 the_best_coordinates = coordinates
 
-    # print("The best coordinates (sfs): " + str(the_best_coordinates))
     return the_best_coordinates
