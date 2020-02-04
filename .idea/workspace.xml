@@ -10,13 +10,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+            <state relative-caret-position="765">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/selection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_selection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="29" />
+              <folding>
+                <element signature="e#1#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,6 +62,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/test_selection.py" />
+        <option value="$PROJECT_DIR$/selection.py" />
       </list>
     </option>
   </component>
@@ -60,11 +86,6 @@
             <path>
               <item name="SMPD" type="b2602c69:ProjectViewProjectNode" />
               <item name="SMPD" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SMPD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SMPD" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SMPD" type="b2602c69:ProjectViewProjectNode" />
@@ -97,7 +118,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="StatystyczneMetodyPrzetwarzaniaDanych" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,9 +140,39 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for test_selection.TestSelection" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="StatystyczneMetodyPrzetwarzaniaDanych" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_selection.TestSelection&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_selection.TestSelection.test_calculating_f_vector_one_dimension" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="StatystyczneMetodyPrzetwarzaniaDanych" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_selection.TestSelection.test_calculating_f_vector_one_dimension&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Unittests for test_selection.TestSelection" />
+        <item itemvalue="Python tests.Unittests for test_selection.TestSelection.test_calculating_f_vector_one_dimension" />
       </list>
     </recent_temporary>
   </component>
@@ -137,6 +188,26 @@
       <updated>1578841225431</updated>
     </task>
     <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_for_test_selection_TestSelection_test_calculating_f_vector_one_dimension - 2020.02.04 at 20h 43m 07s.xml">
+      <configuration name="Unittests for test_selection.TestSelection.test_calculating_f_vector_one_dimension" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_selection_TestSelection_test_calculating_f_vector_one_dimension - 2020.02.04 at 20h 44m 58s.xml">
+      <configuration name="Unittests for test_selection.TestSelection.test_calculating_f_vector_one_dimension" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_selection_TestSelection_test_calculating_f_vector_one_dimension - 2020.02.04 at 20h 50m 27s.xml">
+      <configuration name="Unittests for test_selection.TestSelection.test_calculating_f_vector_one_dimension" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_selection_TestSelection_test_calculating_f_vector_one_dimension - 2020.02.04 at 20h 50m 56s.xml">
+      <configuration name="Unittests for test_selection.TestSelection.test_calculating_f_vector_one_dimension" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_selection_TestSelection - 2020.02.04 at 20h 51m 11s.xml">
+      <configuration name="Unittests for test_selection.TestSelection" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_selection_TestSelection - 2020.02.04 at 20h 51m 52s.xml">
+      <configuration name="Unittests for test_selection.TestSelection" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -164,8 +235,28 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+        <state relative-caret-position="765">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_selection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#1#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
