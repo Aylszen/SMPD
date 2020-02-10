@@ -1,5 +1,6 @@
 import random
 from src.selection import *
+from src.classification import *
 from copy import deepcopy
 
 
@@ -44,6 +45,25 @@ def divide_set_and_transpose(matrices, percentage):
     return learning_set, training_set
 
 
+def create_matrices_based_on_sel_alg(the_best_characteristics, learning_set):
+    new_matrix_a = None
+    new_matrix_b = None
+
+    for characteristic in the_best_characteristics:
+        if new_matrix_a is None:
+            new_matrix_a = np.array([learning_set[0][characteristic]])
+            new_matrix_b = np.array([learning_set[1][characteristic]])
+        else:
+            new_matrix_a = np.append(new_matrix_a, [learning_set[0][characteristic]], axis=0)
+            new_matrix_b = np.append(new_matrix_b, [learning_set[1][characteristic]], axis=0)
+
+    print("Dlugocs tab_a: ", len(new_matrix_a))
+    new_matrix = []
+    new_matrix.append(new_matrix_a)
+    new_matrix.append(new_matrix_b)
+    return new_matrix
+
+
 def main():
     path_to_file = "../Maple_Oak.txt"
     percentage = 20
@@ -54,9 +74,16 @@ def main():
     learning_set, training_set = divide_set_and_transpose(matrices_list, percentage)
 
     if selection == "F":
-        print(fisher_algorithm(learning_set, number_of_characteristics))
+        the_best_characteristics = fisher_algorithm(learning_set, number_of_characteristics)
     elif selection == "SFS":
-        print(sfs_algorithm(learning_set, number_of_characteristics))
+        the_best_characteristics = sfs_algorithm(learning_set, number_of_characteristics)
+    print("The best characteristics for", selection, ":", the_best_characteristics)
+
+    learning_set_after_sel_alg = create_matrices_based_on_sel_alg(the_best_characteristics, learning_set)
+    training_set_after_sel_alg = create_matrices_based_on_sel_alg(the_best_characteristics, training_set)
+
+
+    #nn_classification(np.array(training_set[0]).transpose(), np.array(matrix_after_sel_alg))
 
 
 if __name__ == "__main__":
