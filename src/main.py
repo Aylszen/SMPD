@@ -57,7 +57,6 @@ def create_matrices_based_on_sel_alg(the_best_characteristics, learning_set):
             new_matrix_a = np.append(new_matrix_a, [learning_set[0][characteristic]], axis=0)
             new_matrix_b = np.append(new_matrix_b, [learning_set[1][characteristic]], axis=0)
 
-
     new_matrix = []
     new_matrix.append(new_matrix_a)
     new_matrix.append(new_matrix_b)
@@ -67,9 +66,10 @@ def create_matrices_based_on_sel_alg(the_best_characteristics, learning_set):
 def main():
     path_to_file = "../Maple_Oak.txt"
     percentage = 20
-    number_of_characteristics = 3
+    number_of_characteristics = 2
     selection = "SFS"  # SFS or F
     classification = "NN"  # NN kNN
+    k = 3
     matrices = load_data(path_to_file)
     matrices_list = list(matrices.values())
     learning_set, training_set = divide_set_and_transpose(matrices_list, percentage)
@@ -84,11 +84,11 @@ def main():
     training_set_after_sel_alg = create_matrices_based_on_sel_alg(the_best_characteristics, training_set)
 
     if classification == "NN":
-        indexes = nn_classification(training_set_after_sel_alg, learning_set_after_sel_alg)
+        result = nn_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list)
     elif classification == "kNN":
-        print("Not implemented yet")
+        result = knn_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, k)
 
-    print(calculate_efficiency(indexes, matrices_list, training_set))
+    print(classification, "efficiency:", result)
 
 
 if __name__ == "__main__":
