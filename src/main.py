@@ -57,8 +57,6 @@ def create_matrices_based_on_sel_alg(the_best_characteristics, learning_set):
             new_matrix_a = np.append(new_matrix_a, [learning_set[0][characteristic]], axis=0)
             new_matrix_b = np.append(new_matrix_b, [learning_set[1][characteristic]], axis=0)
 
-    print("Dlugocs tab_a: ", len(new_matrix_a))
-    print("Dlugocs tab_b: ", len(new_matrix_b))
 
     new_matrix = []
     new_matrix.append(new_matrix_a)
@@ -69,7 +67,7 @@ def create_matrices_based_on_sel_alg(the_best_characteristics, learning_set):
 def main():
     path_to_file = "../Maple_Oak.txt"
     percentage = 20
-    number_of_characteristics = 2
+    number_of_characteristics = 3
     selection = "SFS"  # SFS or F
     classification = "NN"  # NN kNN
     matrices = load_data(path_to_file)
