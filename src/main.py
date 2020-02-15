@@ -66,9 +66,9 @@ def create_matrices_based_on_sel_alg(the_best_characteristics, learning_set):
 def main():
     path_to_file = "../Maple_Oak.txt"
     percentage = 20
-    number_of_characteristics = 2
+    number_of_characteristics = 1
     selection = "SFS"  # SFS or F
-    classification = "NN"  # NN kNN
+    classification = "NN"  # NN kNN NM
     k = 3
     matrices = load_data(path_to_file)
     matrices_list = list(matrices.values())
@@ -84,9 +84,11 @@ def main():
     training_set_after_sel_alg = create_matrices_based_on_sel_alg(the_best_characteristics, training_set)
 
     if classification == "NN":
-        result = nn_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list)
+        result = nn_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, training_set)
     elif classification == "kNN":
-        result = knn_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, k)
+        result = knn_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, k, training_set)
+    elif classification == "NM":
+        result = nm_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, training_set)
 
     print(classification, "efficiency:", result)
 
