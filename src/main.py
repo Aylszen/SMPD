@@ -68,7 +68,7 @@ def main():
     percentage = 20
     number_of_characteristics = 2
     selection = "SFS"  # SFS or F
-    classification = "NM"  # NN kNN NM
+    classification = "kNM"  # NN kNN NM kNM
     k = 3
     matrices = load_data(path_to_file)
     matrices_list = list(matrices.values())
@@ -89,7 +89,8 @@ def main():
         result = knn_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, k, training_set)
     elif classification == "NM":
         result = nm_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, training_set)
-
+    elif classification == "kNM":
+        result = knm_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, 2, training_set)
     print(classification, "efficiency:", result)
 
 
