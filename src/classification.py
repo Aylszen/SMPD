@@ -6,12 +6,8 @@ def calculate_mean(matrix, axis):
 
 
 def calculate_distances(pattern, matrix):
-    print("Pattern", pattern)
-    print("Matrix", matrix)
     distances = []
     for m_pattern in matrix:
-        print("Weszlo")
-        print(m_pattern)
         distances.append(np.linalg.norm(m_pattern - pattern))
     distances.sort()
     return distances
@@ -91,29 +87,20 @@ def calculate_efficiency(classification_result, matrices_all, training_set):
 
     for i in range(0, len(training_set_a_t)):
         if classification_result[i] == 0:
-            print("Weszlo 0")
-            print(training_set_a_t[i])
             if training_set_a_t[i] in matrices_all[0]:
                 efficiency = efficiency + 1
-                print("Weszlo 1")
         elif classification_result[i] == 2:
             efficiency = efficiency + 1
-            print("Weszlo 2")
 
     for i in range(0, len(training_set_b_t)):
         if classification_result[i + len(training_set_a_t)] == 1:
-            print("Weszlo 3")
-            print(training_set_b_t[i])
             if training_set_b_t[i] in matrices_all[1]:
                 efficiency = efficiency + 1
-                print("Weszlo 4")
         elif classification_result[i + len(training_set_a_t)] == 2:
             efficiency = efficiency + 1
-            print("Weszlo 5")
 
     training_set_len = len(training_set[0].transpose()) + len(training_set[1].transpose())
-    print(efficiency)
-    print(training_set_len, len(classification_result))
+
     return efficiency/training_set_len * 100
 
 

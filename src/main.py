@@ -66,9 +66,9 @@ def create_matrices_based_on_sel_alg(the_best_characteristics, learning_set):
 def main():
     path_to_file = "../Maple_Oak.txt"
     percentage = 20
-    number_of_characteristics = 1
+    number_of_characteristics = 2
     selection = "SFS"  # SFS or F
-    classification = "NN"  # NN kNN NM
+    classification = "NM"  # NN kNN NM
     k = 3
     matrices = load_data(path_to_file)
     matrices_list = list(matrices.values())
