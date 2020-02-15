@@ -128,16 +128,17 @@ def knm_classification(training_set_after_sel_alg, learning_set_after_sel_alg, m
     mean_list.append(np.transpose(learning_set_after_sel_alg[1])[index])
     new_learning_set = deepcopy(learning_set_after_sel_alg[0])
     new_learning_set = np.append(new_learning_set, learning_set_after_sel_alg[1], axis=1)
-    new_training_set = deepcopy(training_set_after_sel_alg[0])
-    new_training_set = np.append(new_training_set, training_set_after_sel_alg[1], axis=1)
-    knm_evaluate_sets(np.transpose(new_learning_set), mean_list)
 
-    return True
+    return knm_evaluate_sets(np.transpose(new_learning_set), mean_list, training_set_after_sel_alg, matrices_list, training_set)
 
 
-def knm_evaluate_sets(learning_set, mean_list):
+def knm_evaluate_sets(learning_set, mean_list, training_set_after_sel_alg, matrices_list, training_set):
     matrix_a, matrix_b, new_mean_list = knm_evaluate_sets_first_step(learning_set, mean_list)
-    return knm_evaluate_sets_second_step(matrix_a, matrix_b, new_mean_list, learning_set)
+    new_matrix_a, new_matrix_b = knm_evaluate_sets_second_step(matrix_a, matrix_b, new_mean_list, learning_set)
+    new_learning_set = []
+    new_learning_set.append(np.array([new_matrix_a]))
+    new_learning_set.append(np.array([new_matrix_b]))
+    return nm_classification(training_set_after_sel_alg, new_learning_set, matrices_list, training_set)
 
 
 def knm_evaluate_sets_first_step(learning_set, mean_list):
@@ -170,4 +171,27 @@ def knm_evaluate_sets_second_step(matrix_a, matrix_b, mean_list, learning_set):
     distances = []
     for mean in mean_list:
         distances.append(calculate_distances_knm(mean, learning_set))
-    return True
+
+    temp_a = []
+    temp_b = []
+    for i in range(len(learning_set)):
+        if distances[0][i] < distances[1][i]:
+            temp_a.append(learning_set[i])
+        elif distances[1][i] < distances[0][i]:
+            temp_b.append(learning_set[i])
+        else:
+            print("weszlo2")
+
+    print("temp_a2:", temp_a)
+    print("temp_b2:", temp_b)
+    mean_list[0] = calculate_mean(np.array([temp_a]), axis=1)
+    mean_list[1] = calculate_mean(np.array([temp_b]), axis=1)
+    #if list(temp_a) == list(matrix_a):
+    #    print("Gitara")
+
+    if not (np.array_equal(temp_a, matrix_a) and np.array_equal(temp_b, matrix_b)):
+        print("Gitara")
+        new_matrix_a, new_matrix_b = knm_evaluate_sets_second_step(temp_a, temp_b, mean_list, learning_set)
+    else:
+        return temp_a, temp_b
+    return new_matrix_a, new_matrix_b
