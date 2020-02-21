@@ -120,12 +120,20 @@ def calculate_distances_knm(pattern, matrix):
     return distances
 
 
-def knm_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, k, training_set):
+def randomly_choose_sample(learning_set_after_sel_alg):
     mean_list = []
     index = random.randint(0, len(np.transpose(learning_set_after_sel_alg[0])) - 1)
     mean_list.append(np.transpose(learning_set_after_sel_alg[0])[index])
     index = random.randint(0, len(np.transpose(learning_set_after_sel_alg[1])) - 1)
     mean_list.append(np.transpose(learning_set_after_sel_alg[1])[index])
+    if np.array_equal(mean_list[0], mean_list[1]):
+        print("Weszlo!!")
+        mean_list = randomly_choose_sample(learning_set_after_sel_alg)
+    return mean_list
+
+
+def knm_classification(training_set_after_sel_alg, learning_set_after_sel_alg, matrices_list, k, training_set):
+    mean_list = randomly_choose_sample(learning_set_after_sel_alg)
     new_learning_set = deepcopy(learning_set_after_sel_alg[0])
     new_learning_set = np.append(new_learning_set, learning_set_after_sel_alg[1], axis=1)
 
@@ -158,6 +166,9 @@ def knm_evaluate_sets_first_step(learning_set, mean_list):
             temp_b.append(learning_set[i])
         else:
             print("weszlo")
+            temp_a.append(learning_set[i])
+            temp_b.append(learning_set[i])
+
     print("Learning set [0]:", learning_set[0])
     print("temp_a:", temp_a)
     print("temp_b:", temp_b)
@@ -181,6 +192,8 @@ def knm_evaluate_sets_second_step(matrix_a, matrix_b, mean_list, learning_set):
             temp_b.append(learning_set[i])
         else:
             print("weszlo2")
+            temp_a.append(learning_set[i])
+            temp_b.append(learning_set[i])
 
     print("temp_a2:", temp_a)
     print("temp_b2:", temp_b)
